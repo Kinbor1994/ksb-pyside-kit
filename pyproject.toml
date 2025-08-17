@@ -1,0 +1,67 @@
+[project]
+name = "ksb-pyside-kit"
+version = "0.1.0"
+description = """
+ksb_pyside_kit is a component and tool kit for building PySide desktop applications (Qt for Python).
+Provides reusable widgets, forms, simple MVC patterns, controllers and themes to accelerate GUI prototyping with authentication management.
+"""
+authors = [
+    { name = "KINNOUME S. Borel", email = "kinnoumeb@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+license = { text = "MIT" }
+keywords = ["pyside6", "qt", "gui", "widgets", "desktop"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: User Interfaces",
+]
+dependencies = [
+    "pyside6 (>=6.9.1,<7.0.0)",
+    "qtawesome (>=1.4.0,<2.0.0)",
+    "alembic (>=1.16.4,<2.0.0)",
+    "qt-material (>=2.17,<3.0)",
+    "pandas (>=2.3.1,<3.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)",
+    "sqlalchemy (>=2.0.43,<3.0.0)",
+    "bcrypt (>=4.3.0,<5.0.0)",
+    "click (>=8.2.1,<9.0.0)"
+]
+
+[project.optional-dependencies]
+dev = [
+]
+
+[project.urls]
+Homepage = "https://github.com/kinbor1994/ksb-pyside-kit"
+Documentation = "https://ksb-pyside-kit.readthedocs.io/"
+Repository = "https://github.com/kinbor1994/ksb-pyside-kit.git"
+Changelog = "https://github.com/kinbor1994/ksb-pyside-kit/blob/main/CHANGELOG.md"
+
+[tool.poetry]
+packages = [{ include = "ksb_pyside_kit", from = "src" }]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --cov=ksb_pyside_kit"
+
+[tool.black]
+line-length = 88
+target-version = ["py310", "py311", "py312", "py313"]
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
