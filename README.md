@@ -46,7 +46,7 @@ ksb_pyside_kit est un framework léger pour construire des applications de burea
 3. Réutiliser les composants UI de `components/` et `widgets/` pour composer vos vues desktop.
 4. Utiliser les scripts dans `cli/` pour gérer l'app et les utilisateurs comme avec manage.py.
 
-## Structure du projet (extrait)
+## Structure du projet
 
 - authentication/ — app d'authentification (controllers, modèles, forms)
 - components/ — composants UI composites
